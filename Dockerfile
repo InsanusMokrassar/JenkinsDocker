@@ -1,0 +1,20 @@
+FROM ubuntu:18.04
+
+USER root
+
+RUN apt update && apt -y install wget gnupg2 openjdk-8-jdk zip unzip curl sudo git
+
+RUN mkdir -p /var/jenkins_home/jenkins && cd /var/jenkins_home/ &&\
+    wget http://mirrors.jenkins.io/war-stable/2.222.4/jenkins.war &&\
+    chown 1000:1000 jenkins.war
+
+RUN useradd -s /bin/bash -G sudo -d /var/jenkins_home -u 1000 jenkins && chown -R jenkins:jenkins /var/jenkins_home &&\
+    chmod 777 /tmp
+
+VOLUME /var/jenkins_home/jenkins
+
+RUN chown -R 1000:1000 /var/jenkins_home
+
+USER 1000
+
+ENTRYPOINT /var/jenkins_home/run
