@@ -1,5 +1,7 @@
 FROM debian:stretch
 
+LABEL maintainer="ovsyannikov.alexey95@gmail.com"
+
 USER root
 
 RUN apt update && apt -y install wget gnupg2 openjdk-8-jdk zip unzip curl sudo git
