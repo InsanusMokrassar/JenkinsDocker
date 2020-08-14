@@ -7,7 +7,7 @@ USER root
 RUN apt update && apt -y install wget gnupg2 openjdk-8-jdk zip unzip curl sudo git software-properties-common pass
 
 RUN mkdir -p /var/jenkins_home/jenkins && cd /var/jenkins_home/ &&\
-    wget http://mirrors.jenkins.io/war-stable/2.235.3/jenkins.war &&\
+    wget http://mirrors.jenkins.io/war-stable/2.235.4/jenkins.war &&\
     chown 1000:1000 jenkins.war
 
 RUN useradd -s /bin/bash -G sudo -d /var/jenkins_home -u 1000 jenkins && chown -R jenkins:jenkins /var/jenkins_home &&\
