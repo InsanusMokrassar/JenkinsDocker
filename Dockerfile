@@ -19,4 +19,6 @@ RUN chown -R 1000:1000 /var/jenkins_home
 
 USER 1000
 
+RUN chmod +x /var/jenkins_home/run
+
 ENTRYPOINT /var/jenkins_home/run
