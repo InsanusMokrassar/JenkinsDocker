@@ -15,11 +15,9 @@ RUN useradd -s /bin/bash -G sudo -d /var/jenkins_home -u 1000 jenkins && chown -
 
 VOLUME /var/jenkins_home/jenkins
 
-RUN chown -R 1000:1000 /var/jenkins_home
+COPY ./run /var/jenkins_home/
+RUN chown -R 1000:1000 /var/jenkins_home && chmod +x /var/jenkins_home/run
 
 USER 1000
-
-COPY ./run /var/jenkins_home/
-RUN chmod +x /var/jenkins_home/run
 
 ENTRYPOINT /var/jenkins_home/run
