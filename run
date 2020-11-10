@@ -2,4 +2,4 @@
 
 export JENKINS_HOME="$HOME/jenkins"
 
-java -jar ~/jenkins.war
+java $JENKINS_LAUNCH_ARGS -jar ~/jenkins.war
