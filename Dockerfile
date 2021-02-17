@@ -12,7 +12,7 @@ RUN mkdir -p /var/jenkins_home/jenkins && cd /var/jenkins_home/ &&\
     useradd -s /bin/bash -G sudo -d /var/jenkins_home -u 1000 jenkins &&\
     chown -R jenkins:jenkins /var/jenkins_home &&\
     chmod 777 /tmp
-RUN wget http://mirrors.jenkins.io/war-stable/2.263.3/jenkins.war &&\
+RUN wget http://mirrors.jenkins.io/war-stable/2.263.4/jenkins.war &&\
     chown 1000:1000 jenkins.war && mv jenkins.war /var/jenkins_home/
 
 VOLUME /var/jenkins_home/jenkins
