@@ -6,7 +6,7 @@ USER root
 
 ENV TZ=Etc/GMT
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt update && apt -y install wget gnupg2 openjdk-8-jdk zip unzip curl sudo git software-properties-common pass
+RUN apt update && apt -y install wget gnupg2 openjdk-11-jdk zip unzip curl sudo git software-properties-common pass axel
 
 RUN mkdir -p /var/jenkins_home/jenkins && cd /var/jenkins_home/ &&\
     useradd -s /bin/bash -G sudo -d /var/jenkins_home -u 1000 jenkins &&\
@@ -20,4 +20,4 @@ USER 1000
 
 VOLUME /var/jenkins_home/jenkins
 
-RUN cd /var/jenkins_home/ && wget http://mirrors.jenkins.io/war-stable/2.303.1/jenkins.war
+RUN cd /var/jenkins_home/ && axel -a -n 8 --max-redirect=256 http://mirrors.jenkins.io/war-stable/2.303.1/jenkins.war
