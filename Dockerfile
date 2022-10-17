@@ -20,4 +20,4 @@ USER 1000
 
 VOLUME /var/jenkins_home/jenkins
 
-RUN cd /var/jenkins_home/ && axel -a -n 8 --max-redirect=256 http://mirrors.jenkins.io/war-stable/2.361.1/jenkins.war
+RUN cd /var/jenkins_home/ && axel -a -n 8 --max-redirect=256 http://mirrors.jenkins.io/war-stable/2.361.2/jenkins.war
