@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 LABEL maintainer="ovsyannikov.alexey95@gmail.com"
 
@@ -20,4 +20,4 @@ USER 1000
 
 VOLUME /var/jenkins_home/jenkins
 
-RUN cd /var/jenkins_home/ && axel -a -n 8 --max-redirect=256 http://mirrors.jenkins.io/war-stable/2.361.3/jenkins.war
+RUN cd /var/jenkins_home/ && axel -a -n 8 --max-redirect=256 http://mirrors.jenkins.io/war-stable/2.361.4/jenkins.war
