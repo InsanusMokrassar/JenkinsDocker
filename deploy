@@ -9,7 +9,7 @@ function assert_success() {
     fi
 }
 
-version="2.361.4"
+version="2.375.1"
 
 assert_success docker build -t jenkins:$version ./
 assert_success docker tag jenkins:$version insanusmokrassar/jenkins:$version
