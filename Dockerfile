@@ -20,4 +20,4 @@ USER 1000
 
 VOLUME /var/jenkins_home/jenkins
 
-RUN cd /var/jenkins_home/ && wget http://mirrors.jenkins.io/war-stable/2.246.1/jenkins.war
+RUN cd /var/jenkins_home/ && wget http://mirrors.jenkins.io/war-stable/2.426.1/jenkins.war
