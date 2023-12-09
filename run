@@ -1,5 +1,7 @@
 #!/bin/bash
 
+reset
+
 export JENKINS_HOME="$HOME/jenkins"
 
 java $JENKINS_LAUNCH_ARGS -jar ~/jenkins.war
