@@ -3,8 +3,6 @@ FROM ubuntu:20.04
 LABEL maintainer="ovsyannikov.alexey95@gmail.com"
 
 SHELL ["/bin/bash", "-c"]
-ENTRYPOINT /var/jenkins_home/run
-VOLUME /var/jenkins_home/jenkins
 
 USER root
 
@@ -32,3 +30,6 @@ RUN apt update && apt -y install software-properties-common pass axel
 USER jenkins
 
 RUN cd /var/jenkins_home/ && wget http://mirrors.jenkins.io/war-stable/2.426.1/jenkins.war
+
+ENTRYPOINT /var/jenkins_home/run
+VOLUME /var/jenkins_home/jenkins
