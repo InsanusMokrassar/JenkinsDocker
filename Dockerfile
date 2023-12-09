@@ -8,6 +8,7 @@ USER root
 
 ENV TZ=Etc/GMT
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN mv /bin/sh /bin/sh.old && ln -s /bin/bash /bin/sh
 RUN apt update && apt -y install wget gnupg2 zip unzip curl sudo git
 
 RUN mkdir -p /var/jenkins_home/jenkins && cd /var/jenkins_home/ &&\
