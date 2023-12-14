@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-  newVersion="2.246.1"
+  newVersion="2.426.2"
 else
   newVersion="$1"
 fi
