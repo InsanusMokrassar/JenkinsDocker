@@ -17,5 +17,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Update version
+        run: ./autoupdate.sh
       - name: Deploy
         run: ./deploy
