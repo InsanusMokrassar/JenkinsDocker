@@ -1,4 +1,4 @@
-FROM jenkins/ssh-agent:5.38.0-debian-jdk17 as ssh-agent
+FROM jenkins/ssh-agent:5.38.0-jdk17 as ssh-agent
 
 LABEL maintainer="ovsyannikov.alexey95@gmail.com"
 
