@@ -12,7 +12,7 @@ RUN apt update && apt -y install wget gnupg2 zip unzip curl sudo git software-pr
 
 RUN chmod 777 /tmp
 
-USER jenkins
+#USER jenkins
 
 RUN curl -s "https://get.sdkman.io" | bash
 RUN source "$HOME/.sdkman/bin/sdkman-init.sh" &&\
