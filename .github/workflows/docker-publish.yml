@@ -4,7 +4,7 @@ on:
     branches:
       - master
 jobs:
-  publishing:
+  publish_jenkins:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -20,4 +20,23 @@ jobs:
       - name: Update version
         run: ./autoupdate.sh
       - name: Deploy
+        run: ./deploy
+  publish_jenkins_ssh-agent:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Log into registry
+        uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
+        with:
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Update version
+        working-directory: ./ssh-agent/
+        run: ./autoupdate.sh
+      - name: Deploy
+        working-directory: ./ssh-agent/
         run: ./deploy

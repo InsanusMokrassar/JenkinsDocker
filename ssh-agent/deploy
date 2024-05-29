@@ -9,8 +9,8 @@ function assert_success() {
     fi
 }
 
-version="2.426.1"
-image_name=jenkins
+version="5.38.0"
+image_name=jenkins-ssh-agent
 
 assert_success docker build -t $image_name:$version ./
 assert_success docker tag $image_name:$version insanusmokrassar/$image_name:$version
