@@ -21,7 +21,7 @@ RUN source "$HOME/.sdkman/bin/sdkman-init.sh" &&\
     sdk install java `sdk ls java | grep librca | grep " 17" | grep -m 1 -Eo "(.?[0-9]{1,2}){3}" | head -1`-librca &&\
     sdk default java `sdk ls java | grep librca | grep " 17" | grep -m 1 -Eo "(.?[0-9]{1,2}){3}" | head -1`-librca
 
-RUN cd /var/jenkins_home/ && wget http://mirrors.jenkins.io/war-stable/2.426.1/jenkins.war
+RUN cd /var/jenkins_home/ && wget http://mirrors.jenkins.io/war-stable/2.492.1/jenkins.war
 
 ENTRYPOINT /var/jenkins_home/run
 VOLUME /var/jenkins_home/jenkins

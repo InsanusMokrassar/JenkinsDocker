@@ -9,7 +9,7 @@ function assert_success() {
     fi
 }
 
-version="2.426.1"
+version="2.492.1"
 image_name=jenkins
 
 assert_success docker build -t $image_name:$version ./
